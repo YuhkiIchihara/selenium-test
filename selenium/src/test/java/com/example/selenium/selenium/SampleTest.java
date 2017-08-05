@@ -32,8 +32,8 @@ public class SampleTest {
 	public void タイトルチェック() throws IOException {
 		assertThat(driver.getTitle(), is("予約情報入力"));
 		//画面キャプチャ
-		//File tempFile01 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		//FileUtils.moveFile(tempFile01, new File("/var/lib/jenkins/workspace/tmp/01.png"));
+		File tempFile01 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.moveFile(tempFile01, new File("/var/lib/jenkins/workspace/tmp/01.png"));
 		//FileUtils.moveFile(tempFile01, new File("C:\\020_WORKS\\screenshots\\01.png"));
 	}
 
@@ -41,14 +41,14 @@ public class SampleTest {
 	public void 名前だけを入力して次へを押すとエラー画面に遷移すること() throws IOException {
 		driver.findElement(By.id("guestname")).sendKeys("市原佑樹");
 		//画面キャプチャ
-		//File tempFile02 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		//FileUtils.moveFile(tempFile02, new File("/var/lib/jenkins/workspace/tmp/02.png"));
+		File tempFile02 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.moveFile(tempFile02, new File("/var/lib/jenkins/workspace/tmp/02.png"));
 		//FileUtils.moveFile(tempFile02, new File("C:\\020_WORKS\\screenshots\\02.png"));
 		driver.findElement(By.id("goto_next")).click();
 		assertThat(driver.getTitle(), is("予約エラー"));
 		//画面キャプチャ
-		//File tempFile03 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		//FileUtils.moveFile(tempFile03, new File("/var/lib/jenkins/workspace/tmp/03.png"));
+		File tempFile03 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.moveFile(tempFile03, new File("/var/lib/jenkins/workspace/tmp/03.png"));
 		//FileUtils.moveFile(tempFile03, new File("C:\\020_WORKS\\screenshots\\03.png"));
 	}
 
