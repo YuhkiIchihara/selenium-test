@@ -1,0 +1,13 @@
+package com.example.selenium.selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.junit.Before;
+
+public class SampleTest {
+	//WebDriverのインスタンス変数
+	private WebDriver driver;
+
+	@Before
+
+
+}

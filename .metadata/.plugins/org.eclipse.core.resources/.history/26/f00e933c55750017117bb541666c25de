@@ -1,0 +1,11 @@
+package com.example.selenium.selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SampleTest {
+	WebDriver driver = new ChromeDriver();
+	//WebDriver driver = new PhantomJSDriver();
+	driver.get("http://example.selenium.jp/reserveApp");
+
+}

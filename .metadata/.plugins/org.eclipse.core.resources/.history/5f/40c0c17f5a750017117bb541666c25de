@@ -1,0 +1,47 @@
+package com.example.selenium.selenium;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.junit.Before;
+import org.apache.commons.io.FileUtils;
+import org.junit.After;
+import org.junit.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class SampleTest {
+	//WebDriverのインスタンス変数
+	private WebDriver driver;
+
+	@Before
+	public void setUp() {
+		driver = new ChromeDriver();
+		driver.get("http://example.selenium.jp/reserveApp");
+	}
+
+	@Test
+	public void タイトルチェック() {
+		assertThat(driver.getTitle(), is("予約情報入力"));
+		//画面キャプチャ
+		File tempFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.moveFile(tempFile, new File("C:\\020_WORKS\\screenshots"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@After
+	public void tearDown() {
+		driver.quit();
+	}
+
+
+}
